@@ -2,3 +2,5 @@ pandas
 plotly-express
 streamlit
 nbformat
+matplotlib
+ipywidgets

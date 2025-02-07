@@ -1,8 +1,15 @@
 [server]
 headless = true
-port = 10900
+port = 8501
 enableCORS = false
+enableXsrfProtection = false
 
-[browser]
-serverAddress = "localhost"  # Ou seu IP externo se for acesso remoto
-serverPort = 10900
+[theme]
+base="dark"  # Altere para "dark" se preferir o tema escuro
+primaryColor="#1f77b4"
+backgroundColor="#f0f2f6"
+secondaryBackgroundColor="#e0e0e0"
+textColor="#262730"
+
+[client]
+showErrorDetails = true

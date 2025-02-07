@@ -7,7 +7,7 @@ def load_data(path):
     return pd.read_csv(path)
 
 # Carrega os dados e renomeia as colunas para padronizar
-file_path = r"C:\Users\jonat\Documents\GitHub\Dashboard_web\data\vehicles.csv"
+file_path = "data/vehicles.csv"
 df = load_data(file_path)
 df.columns = ['price', 'year', 'model', 'condition', 'cylinders', 'fuel',
               'odometer', 'transmission', 'body', 'color', 'extra', 'date', 'days']

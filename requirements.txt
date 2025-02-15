@@ -4,3 +4,72 @@ streamlit
 nbformat
 matplotlib
 ipywidgets
+
+# Erros Comuns em Data Analysis
+
+KeyError
+- **Ocorre quando**: Tentativa de acesso a chave/coluna inexistente
+- **Exemplo**: `df['coluna_inexistente']`
+- **Solução**: Verificar `df.columns` ou usar `df.get('coluna')`
+
+ValueError
+- **Ocorre quando**: Formato ou valor inadequado
+- **Exemplo**: `pd.to_numeric('texto')` ou `np.array([1, 'texto'])`
+- **Solução**: Validar dados antes das operações
+
+TypeError
+- **Ocorre quando**: Operação com tipo incorreto
+- **Exemplo**: `df['coluna'] + 'texto'` (soma numérico + string)
+- **Solução**: Converter tipos com `astype()` ou `pd.to_numeric()`
+
+IndexError
+- **Ocorre quando**: Acesso a índice fora do range
+- **Exemplo**: `array[100]` em array com 10 elementos
+- **Solução**: Verificar `len()` antes de acessar índices
+
+AttributeError
+- **Ocorre quando**: Acesso a método/atributo inexistente
+- **Exemplo**: `df.meanz()` em vez de `df.mean()`
+- **Solução**: Verificar documentação da biblioteca
+
+MemoryError
+- **Ocorre quando**: Esgotamento de memória
+- **Exemplo**: Carregar arquivo maior que a RAM disponível
+- **Solução**: Usar `chunksize` ou processamento incremental
+
+SettingWithCopyWarning
+- **Ocorre quando**: Modificação em cópia de DataFrame
+- **Exemplo**: `df_view = df[df.col > 0]; df_view['nova'] = 1`
+- **Solução**: Usar `.copy()` ou loc para modificações
+
+LinAlgError (NumPy)
+- **Ocorre quando**: Operação matricial inválida
+- **Exemplo**: Inversa de matriz singular
+- **Solução**: Verificar determinante ou usar pseudoinversa
+
+MissingDataError (Pandas)
+- **Ocorre quando**: Operações com NaN
+- **Exemplo**: `df.dropna()` com parâmetros incorretos
+- **Solução**: Usar `fillna()` ou tratamento adequado
+
+ DtypeWarning
+- **Ocorre quando**: Mistura de tipos em colunas
+- **Exemplo**: Carregar CSV com colunas heterogêneas
+- **Solução**: Especificar `dtype` no carregamento
+
+os Específicos de Machine Learning
+- `NotFittedError`: Modelo não treinado antes de prever
+- `ConvergenceWarning`: Algoritmo não convergiu
+- `DataDimensionalityWarning`: Dimensões incompatíveis
+
+s Práticas para Evitar Erros
+1. Sempre verificar `shape` e `dtypes` dos dados
+2. Usar `try-except` em operações críticas
+3. Validar dados com `assert` statements
+4. Utilizar `df.info()` e `df.describe()` regularmente
+5. Fazer amostragem em grandes datasets
+
+ks Relacionados
+- [[Manipulação de Dados]]
+- [[Tratamento de Missing Values]]
+- [[Otimização de Memória]]
